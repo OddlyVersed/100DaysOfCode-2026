@@ -1,16 +1,15 @@
 public class Question1_leetcode {
     public int removeElement(int[] nums, int val) {
-        int j=0;
-        int i=0;
-        while(i<nums.length && j<nums.length-1){
-            while(j<nums.length && nums[j]==val)
-            {
-                j++;
+        int k = 0;  // Position to place the next valid element
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[k] = nums[i];
+                k++;
             }
-            nums[i]=nums[j];
-            j++;
-            i++;
         }
-        return i;
+
+        return k;
     }
+}
 }
